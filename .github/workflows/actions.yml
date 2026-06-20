@@ -1,0 +1,55 @@
+name: Project CI Validation
+
+on:
+  push:
+    branches:
+      - main
+      - feature/github-actions
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: ls -la
+
+      - name: Validate required folders
+        run: |
+          test -d css
+          test -d js
+          test -d .github/workflows
+          echo "Required folders are present."
+
+      - name: Validate required files
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f js/script.js
+          test -f .github/workflows/actions.yml
+          echo "All required project files are present."
+
+      - name: Check HTML content
+        run: |
+          grep -q "DevOps Git Workflow Dashboard" index.html
+          grep -q "GitOpsBoard" index.html
+          grep -q "js/script.js" index.html
+          echo "HTML validation passed."
+
+      - name: Check CSS content
+        run: |
+          grep -q ".hero" css/style.css
+          grep -q ".timeline-card" css/style.css
+          echo "CSS validation passed."
+
+      - name: Check JavaScript content
+        run: |
+          grep -q "statusButton" js/script.js
+          grep -q "statusMessage" js/script.js
+          echo "JavaScript validation passed."

@@ -3,601 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Git Merge and Collaboration</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #eef2ff, #f8fafc);
-      color: #1e293b;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #2563eb;
-      color: white;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h2 {
-      font-size: 24px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-      color: #475569;
-    }
-
-    .hero button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .hero button:hover {
-      background: #1d4ed8;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      padding: 40px 60px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: #2563eb;
-    }
-
-    .card p {
-      color: #64748b;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #0f172a;
-      color: white;
-    }
-  </style>
+  <title>DevOps Git Workflow Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-
-  <header>
-    <h2>GitDemo</h2>
+  <header class="navbar">
+    <div class="logo">GitOpsBoard</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Contact</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#features">Features</a>
+      <a href="#status">Status</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Welcome to My Git Repository</h1>
-    <p>
-      This sample web page is created to demonstrate how files are added,
-      committed, and pushed from a local Git repository to a remote GitHub repository.
+    <div class="hero-content">
+      <p class="tagline">Git • GitHub Actions • Pull Requests</p>
+      <h1>DevOps Workflow Automation with GitHub Actions</h1>
+      <p class="hero-text">
+        This project demonstrates how Git branches, pull requests, and GitHub Actions
+        work together to support automated validation and collaborative delivery.
+      </p>
+      <button id="statusButton">Check Workflow Status</button>
+      <p id="statusMessage" class="status-message">Workflow status will appear here.</p>
+    </div>
+  </section>
+
+  <section id="workflow" class="section">
+    <h2>CI Workflow Steps</h2>
+    <div class="timeline">
+      <div class="timeline-card">
+        <span>1</span>
+        <h3>Create Branch</h3>
+        <p>Develop changes safely in a separate feature branch.</p>
+      </div>
+
+      <div class="timeline-card">
+        <span>2</span>
+        <h3>Push Changes</h3>
+        <p>Upload commits to GitHub for collaboration and review.</p>
+      </div>
+
+      <div class="timeline-card">
+        <span>3</span>
+        <h3>Run Actions</h3>
+        <p>Automatically validate files and project structure.</p>
+      </div>
+
+      <div class="timeline-card">
+        <span>4</span>
+        <h3>Merge Pull Request</h3>
+        <p>Merge only after automated checks complete successfully.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section light">
+    <h2>Project Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Clean UI</h3>
+        <p>A structured HTML and CSS layout for a realistic project workflow.</p>
+      </div>
+
+      <div class="card">
+        <h3>JavaScript Interaction</h3>
+        <p>A small script adds interactivity and confirms that static assets are linked.</p>
+      </div>
+
+      <div class="card">
+        <h3>CI Validation</h3>
+        <p>GitHub Actions checks that required project files are present.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="status" class="section">
+    <h2>Repository Status</h2>
+    <p class="repo-note">
+      This repository is prepared for a pull request workflow with automated CI checks.
     </p>
-    <button>Explore Project</button>
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <h3>Initialize</h3>
-      <p>Create a local Git repository and start tracking project files.</p>
-    </div>
+  <footer>
+    <p>Created for GitHub Actions and Pull Request Workflow Practice</p>
+  </footer>
 
-    <div class="card">
-      <h3>Commit</h3>
-      <p>Save meaningful checkpoints of changes in the project history.</p>
-    </div>
-
-    <div class="card">
-      <h3>Push</h3>
-      <p>Upload local commits to a remote GitHub repository for collaboration.</p>
-    </div>
-  </section>
-
-<section
-  class="container"
-  style="
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 32px;
-    background: linear-gradient(135deg, #ffffff, #eef4ff);
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-left: 6px solid #2563eb;
-    text-align: left;
-  "
->
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    "
-  >
-    <div
-      style="
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background-color: #2563eb;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: bold;
-      "
-    >
-      ↗
-    </div>
-
-    <div>
-      <h2
-        style="
-          margin: 0 0 8px;
-          font-size: 28px;
-          color: #111827;
-        "
-      >
-        Branching in Git
-      </h2>
-
-      <p
-        style="
-          margin: 0;
-          font-size: 17px;
-          line-height: 1.6;
-          color: #374151;
-        "
-      >
-        This section was added from a feature branch to demonstrate how Git
-        supports safe parallel development without disturbing the main project
-        workflow.
-      </p>
-    </div>
-  </div>
-
-  <div
-    style="
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    "
-  >
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Create Branch
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Work on new features separately from the main codebase.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Test Changes
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Review and validate updates before merging them.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Merge Safely
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Add approved changes back into the main project.
-      </p>
-    </div>
-  </div>
-</section>
-<section
-  class="container"
-  style="
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 34px;
-    background: linear-gradient(135deg, #ffffff, #f0f6ff);
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    border-left: 6px solid #2563eb;
-  "
->
-  <div
-    style="
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-    "
-  >
-    <div
-      style="
-        width: 60px;
-        height: 60px;
-        border-radius: 16px;
-        background-color: #2563eb;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        font-weight: bold;
-        flex-shrink: 0;
-      "
-    >
-      ⎇
-    </div>
-
-    <div style="flex: 1; min-width: 240px;">
-      <h2
-        style="
-          margin: 0 0 10px;
-          font-size: 30px;
-          color: #111827;
-        "
-      >
-        About Git Flow
-      </h2>
-
-      <p
-        style="
-          margin: 0;
-          font-size: 17px;
-          line-height: 1.7;
-          color: #374151;
-        "
-      >
-        This section explains how Git Flow helps teams organise feature
-        development, release preparation, and urgent fixes through a structured
-        branching workflow.
-      </p>
-    </div>
-  </div>
-
-  <div
-    style="
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-    "
-  >
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Feature Work
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        New updates are developed safely in separate feature branches.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Release Prep
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Final changes are tested and stabilised before production release.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Hotfixes
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Urgent fixes can be handled quickly without disrupting ongoing work.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section
-  class="container"
-  style="
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 34px;
-    background: linear-gradient(135deg, #ffffff, #eef7ff);
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    border-left: 6px solid #2563eb;
-  "
->
-  <div
-    style="
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-    "
-  >
-    <div
-      style="
-        width: 60px;
-        height: 60px;
-        border-radius: 16px;
-        background-color: #2563eb;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: bold;
-        flex-shrink: 0;
-      "
-    >
-      ✉
-    </div>
-
-    <div style="flex: 1; min-width: 240px;">
-      <h2
-        style="
-          margin: 0 0 10px;
-          font-size: 30px;
-          color: #111827;
-        "
-      >
-        Contact Section
-      </h2>
-
-      <p
-        style="
-          margin: 0;
-          font-size: 17px;
-          line-height: 1.7;
-          color: #374151;
-        "
-      >
-        This section was added to demonstrate a no-fast-forward merge in Git,
-        where the feature branch history is preserved with a dedicated merge
-        commit.
-      </p>
-    </div>
-  </div>
-
-  <div
-    style="
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-    "
-  >
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Feature Branch
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        Contact updates are developed separately before being merged.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Merge Commit
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        A no-fast-forward merge keeps a clear record of the branch.
-      </p>
-    </div>
-
-    <div
-      style="
-        padding: 18px;
-        background-color: #ffffff;
-        border-radius: 14px;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      "
-    >
-      <h3 style="margin: 0 0 8px; color: #2563eb; font-size: 18px;">
-        Clean History
-      </h3>
-      <p style="margin: 0; color: #4b5563; line-height: 1.5;">
-        The project history clearly shows when the feature was added.
-      </p>
-    </div>
-  </div>
-</section>
-<section
-  class="container"
-  style="
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 32px;
-    background: linear-gradient(135deg, #ffffff, #eef4ff);
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    border-left: 6px solid #2563eb;
-  "
->
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    "
-  >
-    <div
-      style="
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background-color: #2563eb;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        font-weight: bold;
-        flex-shrink: 0;
-      "
-    >
-      @
-    </div>
-
-    <div style="flex: 1; min-width: 240px;">
-      <h2
-        style="
-          margin: 0 0 10px;
-          font-size: 30px;
-          color: #111827;
-        "
-      >
-        Contact Section
-      </h2>
-
-      <p
-        style="
-          margin: 0;
-          font-size: 17px;
-          line-height: 1.6;
-          color: #374151;
-        "
-      >
-        This section was added to demonstrate a no-fast-forward merge in Git.
-        It shows how a feature branch can be merged while keeping a clear
-        record of the branch history.
-      </p>
-    </div>
-  </div>
-
-  <div
-    style="
-      margin-top: 24px;
-      padding: 18px 20px;
-      background-color: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
-      color: #374151;
-      font-size: 16px;
-      line-height: 1.6;
-    "
-  >
-    <strong style="color: #2563eb;">No-Fast-Forward Merge:</strong>
-    This merge style creates a dedicated merge commit, making it easier to
-    identify when a complete feature was added to the project.
-  </div>
-</section>
-
-<footer>
-  <p>Created for Git Flow Strategy and DevOps Workflow Practice</p>
-</footer>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
